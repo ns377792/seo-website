@@ -34,6 +34,7 @@
 h1,
 h2,
 h3,
+.navbar-logo,
 .fw-bold {
     font-weight: 700 !important;
 }
@@ -99,8 +100,10 @@ h6,
     color: var(--secondary) !important;
 }
 
-.navbar-light .navbar-brand h1 {
+.navbar-light .navbar-brand .navbar-logo {
     color: #FFFFFF;
+    font-size: 2rem;
+    line-height: 1.2;
 }
 
 .navbar-light .navbar-brand img {
@@ -130,7 +133,7 @@ h6,
         color: var(--dark) !important;
     }
 
-    .navbar-light .navbar-brand h1 {
+    .navbar-light .navbar-brand .navbar-logo {
         color: var(--primary);
     }
 
@@ -175,7 +178,7 @@ h6,
         display: none;
     }
 
-    .sticky-top.navbar-light .navbar-brand h1 {
+    .sticky-top.navbar-light .navbar-brand .navbar-logo {
         color: var(--primary);
     }
 }
@@ -1666,6 +1669,7 @@ h6,
 }
 
 .consultation h1{
+  margin-left: 20px;
   font-size: 58px;
   font-weight: 800;
   line-height: 1.05;
@@ -1674,28 +1678,37 @@ h6,
 .consultation h1 .accent{
   color: var(--c-purple);
   display: block;
+  /* margin-left: 20px; */
+
 }
 .consultation .underline{
+  margin-left: 20px;
   width: 56px;
   height: 4px;
   background: var(--c-purple);
   border-radius: 2px;
   margin: 22px 0 22px;
+  margin-left: 20px;
+
 }
 .consultation .subtitle{
   color: var(--c-text-gray);
   font-size: 17px;
   max-width: 480px;
   margin-bottom: 40px;
+  margin-left: 20px;
+
 }
 
 .consultation .features{
+  margin-left: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 28px 32px;
   margin-bottom: 36px;
 }
 .consultation .feature-icon{
+  margin-left: 20px;
   width: 52px;
   height: 52px;
   border-radius: 14px;
@@ -1707,11 +1720,13 @@ h6,
   margin-bottom: 14px;
 }
 .consultation .feature h3{
+  margin-left: 20px;
   font-size: 17px;
   font-weight: 700;
   margin-bottom: 6px;
 }
 .consultation .feature .mini-underline{
+  margin-left: 20px;
   width: 24px;
   height: 3px;
   background: var(--c-purple);
@@ -1719,11 +1734,13 @@ h6,
   margin-bottom: 10px;
 }
 .consultation .feature p{
+  margin-left: 20px;
   color: var(--c-text-gray);
   font-size: 14.5px;
 }
 
 .consultation .cta-strip{
+  margin-left: 20px;
   background: #f2eefe;
   border-radius: 16px;
   padding: 20px 24px;
@@ -1738,6 +1755,7 @@ h6,
   gap: 18px;
 }
 .consultation .cta-strip-icon{
+  margin-left: 20px;
   width: 52px;
   height: 52px;
   border-radius: 14px;
@@ -1749,15 +1767,18 @@ h6,
   flex-shrink: 0;
 }
 .consultation .cta-strip h4{
+  margin-left: 20px;
   font-size: 16.5px;
   font-weight: 700;
   margin-bottom: 3px;
 }
 .consultation .cta-strip p{
+  margin-left: 20px;
   color: var(--c-text-gray);
   font-size: 14px;
 }
 .consultation .cta-strip .arrow{
+  margin-left: 20px;
   color: var(--c-purple);
   flex-shrink: 0;
 }

@@ -1,6 +1,19 @@
 (function ($) {
     "use strict";
 
+    // Auto-highlight the current page's nav link (works even if the
+    // hardcoded 'active' class in the HTML is missing/wrong/outdated)
+    var setActiveNavLink = function () {
+        var currentPage = window.location.pathname.split('/').pop();
+        if (currentPage === '') currentPage = 'index.html';
+
+        $('.navbar-nav .nav-link').each(function () {
+            var linkHref = $(this).attr('href');
+            $(this).toggleClass('active', linkHref === currentPage);
+        });
+    };
+    setActiveNavLink();
+
     // Spinner
     var spinner = function () {
         setTimeout(function () {
@@ -76,38 +89,39 @@
 const filterBtns = document.querySelectorAll('.filter-btn');
   const cards = document.querySelectorAll('.card');
 
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      // toggle active state on buttons
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+  // Guard: only run the portfolio filter logic when the markup actually exists on this page
+  if (filterBtns.length && cards.length) {
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // toggle active state on buttons
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
 
-      const filter = btn.getAttribute('data-filter');
+        const filter = btn.getAttribute('data-filter');
 
-      cards.forEach(card => {
-        const category = card.getAttribute('data-category');
-        const show = filter === 'all' || filter === category;
+        cards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          const show = filter === 'all' || filter === category;
 
-        if (show) {
-          card.style.display = '';
-          // small fade-in animation
-          requestAnimationFrame(() => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(8px)';
+          if (show) {
+            card.style.display = '';
+            // small fade-in animation
             requestAnimationFrame(() => {
-              card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-              card.style.opacity = '1';
-              card.style.transform = 'translateY(0)';
+              card.style.opacity = '0';
+              card.style.transform = 'translateY(8px)';
+              requestAnimationFrame(() => {
+                card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+              });
             });
-          });
-        } else {
-          card.style.display = 'none';
-        }
+          } else {
+            card.style.display = 'none';
+          }
+        });
       });
     });
-  });
-
-
+  }
 
 
 
@@ -118,54 +132,79 @@ const filterBtns = document.querySelectorAll('.filter-btn');
   const prevBtn = document.getElementById('prevBtn');
   const nextBtn = document.getElementById('nextBtn');
 
-  const totalSlides = slides.length;
-  let currentIndex = 0;
-  let autoplayTimer;
+  // Guard: only run the testimonial carousel logic when the markup actually exists on this page
+  if (track && slides.length && prevBtn && nextBtn) {
+    const totalSlides = slides.length;
+    let currentIndex = 0;
+    let autoplayTimer;
 
-  function goToSlide(index) {
-    currentIndex = (index + totalSlides) % totalSlides;
-    // Each slide is (100 / totalSlides)% of the track's width
-    track.style.transform = `translateX(-${currentIndex * (100 / totalSlides)}%)`;
+    function goToSlide(index) {
+      currentIndex = (index + totalSlides) % totalSlides;
+      // Each slide is (100 / totalSlides)% of the track's width
+      track.style.transform = `translateX(-${currentIndex * (100 / totalSlides)}%)`;
 
-    dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
-  }
+      dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
+    }
 
-  dots.forEach(dot => {
-    dot.addEventListener('click', () => {
-      goToSlide(parseInt(dot.getAttribute('data-index'), 10));
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        goToSlide(parseInt(dot.getAttribute('data-index'), 10));
+        restartAutoplay();
+      });
+    });
+
+    nextBtn.addEventListener('click', () => {
+      goToSlide(currentIndex + 1);
       restartAutoplay();
     });
-  });
 
-  nextBtn.addEventListener('click', () => {
-    goToSlide(currentIndex + 1);
+    prevBtn.addEventListener('click', () => {
+      goToSlide(currentIndex - 1);
+      restartAutoplay();
+    });
+
+    function restartAutoplay() {
+      clearInterval(autoplayTimer);
+      autoplayTimer = setInterval(() => goToSlide(currentIndex + 1), 6000);
+    }
+
+    // Swipe support for touch devices
+    let touchStartX = 0;
+    track.addEventListener('touchstart', e => {
+      touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+
+    track.addEventListener('touchend', e => {
+      const touchEndX = e.changedTouches[0].clientX;
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > 40) {
+        goToSlide(diff > 0 ? currentIndex + 1 : currentIndex - 1);
+        restartAutoplay();
+      }
+    }, { passive: true });
+
+    goToSlide(0);
     restartAutoplay();
-  });
-
-  prevBtn.addEventListener('click', () => {
-    goToSlide(currentIndex - 1);
-    restartAutoplay();
-  });
-
-  function restartAutoplay() {
-    clearInterval(autoplayTimer);
-    autoplayTimer = setInterval(() => goToSlide(currentIndex + 1), 6000);
   }
 
-  // Swipe support for touch devices
-  let touchStartX = 0;
-  track.addEventListener('touchstart', e => {
-    touchStartX = e.touches[0].clientX;
-  }, { passive: true });
-
-  track.addEventListener('touchend', e => {
-    const touchEndX = e.changedTouches[0].clientX;
-    const diff = touchStartX - touchEndX;
-    if (Math.abs(diff) > 40) {
-      goToSlide(diff > 0 ? currentIndex + 1 : currentIndex - 1);
-      restartAutoplay();
-    }
-  }, { passive: true });
-
-  goToSlide(0);
-  restartAutoplay();
+  // Basic contact / consultation form handling (no backend wired up yet).
+  // Prevents a dead-end page reload on submit and gives the user feedback.
+  document.querySelectorAll('form').forEach(form => {
+    if (form.hasAttribute('data-no-js-handler')) return;
+    form.addEventListener('submit', function (e) {
+      if (!form.getAttribute('action')) {
+        e.preventDefault();
+        const btn = form.querySelector('button[type="submit"]');
+        if (btn) {
+          const originalHTML = btn.innerHTML;
+          btn.textContent = 'Message Sent!';
+          btn.disabled = true;
+          setTimeout(() => {
+            btn.innerHTML = originalHTML;
+            btn.disabled = false;
+            form.reset();
+          }, 2500);
+        }
+      }
+    });
+  });
