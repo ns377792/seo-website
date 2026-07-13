@@ -2511,3 +2511,19 @@ h6,
     .process-cta { justify-content: center; text-align: center; }
     .process-cta-btn { margin-left: 0; width: 100%; text-align: center; }
 }
+
+/* ---------- Navbar offset spacer (inner pages) ----------
+   The navbar is position:absolute on desktop (min-width:992px) so it can sit
+   on top of the home page's hero section. Inner pages (About, Service,
+   Contact, Project, Get Free Consultation) don't have that hero block, so
+   without this spacer the page content renders underneath the navbar. On
+   mobile the navbar is in normal flow already, so no spacer is needed there. */
+.navbar-offset-spacer {
+    height: 95px;
+}
+
+@media (max-width: 991.98px) {
+    .navbar-offset-spacer {
+        height: 0;
+    }
+}
