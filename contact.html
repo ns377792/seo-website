@@ -64,7 +64,6 @@
             <nav class="navbar navbar-expand-lg navbar-light bk-navbar px-4 px-lg-5 py-3 py-lg-0">
                 <a href="index.html" class="navbar-brand p-0">
                     <p class="navbar-logo m-0"><i class="fa fa-search me-2" aria-hidden="true"></i>Brand<span class="fs-5">Karlo</span></p>
-                    <!-- <img src="img/logo.png" alt="Logo"> -->
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars"></span>
@@ -74,6 +73,7 @@
                         <a href="index.html" class="nav-item nav-link">Home</a>
                         <a href="about.html" class="nav-item nav-link">About</a>
                         <a href="service.html" class="nav-item nav-link">Service</a>
+                        <a href="project.html" class="nav-item nav-link">Project</a>
                         <a href="contact.html" class="nav-item nav-link active">Contact</a>
                         <a href="Get-Free-Consultation.html" class="nav-item nav-link">Get Free Consultation</a>
                     </div>
@@ -99,25 +99,25 @@
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                            <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
                                             <label for="name">Your Name</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                            <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
                                             <label for="email">Your Email</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                            <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
                                             <label for="subject">Subject</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
+                                            <textarea class="form-control" placeholder="Leave a message here" id="message" name="message" style="height: 150px" required></textarea>
                                             <label for="message">Message</label>
                                         </div>
                                     </div>
@@ -148,11 +148,11 @@
 
                     <div class="col-md-6 col-lg-3">
                         <h5 class="text-white mb-4">Popular Link</h5>
-                        <a class="btn btn-link" href="#">About Us</a>
-                        <a class="btn btn-link" href="#">Contact Us</a>
-                        <a class="btn btn-link" href="#">Privacy Policy</a>
-                        <a class="btn btn-link" href="#">Terms & Condition</a>
-                        <a class="btn btn-link" href="#">Career</a>
+                        <a class="btn btn-link" href="about.html">About Us</a>
+                        <a class="btn btn-link" href="contact.html">Contact Us</a>
+                        <a class="btn btn-link" href="privacy-policy.html">Privacy Policy</a>
+                        <a class="btn btn-link" href="terms-and-conditions.html">Terms & Condition</a>
+                        <a class="btn btn-link" href="careers.html">Career</a>
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <h5 class="text-white mb-4">Project Gallery</h5>
@@ -186,11 +186,11 @@
                         <p><i class="fa fa-phone-alt me-3"></i>+91 8375948879</p>
                         <p><i class="fa fa-envelope me-3"></i>Contact@iamnitinsingh.in</p>
                         <div class="d-flex pt-2">
-                            <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-youtube"></i></a>
-                            <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="https://twitter.com/brandkarlo" target="_blank" rel="noopener noreferrer" aria-label="BrandKarlo on Twitter"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="https://facebook.com/brandkarlo" target="_blank" rel="noopener noreferrer" aria-label="BrandKarlo on Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="https://youtube.com/@brandkarlo" target="_blank" rel="noopener noreferrer" aria-label="BrandKarlo on YouTube"><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="https://instagram.com/brandkarlo" target="_blank" rel="noopener noreferrer" aria-label="BrandKarlo on Instagram"><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="https://linkedin.com/company/brandkarlo" target="_blank" rel="noopener noreferrer" aria-label="BrandKarlo on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
 
@@ -206,13 +206,13 @@
                 <div class="copyright">
                     <div class="row">
                         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="#">BrandKarlo</a>, All Right Reserved. 
+                            &copy; <a class="border-bottom" href="index.html">BrandKarlo</a>, All Right Reserved. 
                         </div>
                         <div class="col-md-6 text-center text-md-end">
                             <div class="footer-menu">
-                                <a href="#">Home</a>
-                                <a href="#">Help</a>
-                                <a href="#">FQAs</a>
+                                <a href="index.html">Home</a>
+                                <a href="contact.html">Help</a>
+                                <a href="faq.html">FAQs</a>
                             </div>
                         </div>
                     </div>
