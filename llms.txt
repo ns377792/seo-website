@@ -1,0 +1,31 @@
+# BrandKarlo
+
+> BrandKarlo is a full-service digital marketing agency based in New Delhi, India, helping startups, local businesses, and growing brands build a powerful online presence. Core services include SEO, website design & development, social media marketing, Google Ads (PPC), branding & graphic design, and AI marketing automation. BrandKarlo is known for measurable, data-driven growth strategies for clients across India and internationally.
+
+## Company
+
+- [About BrandKarlo](https://brandkarlo.vercel.app/about.html): Company story, approach, and why businesses choose BrandKarlo.
+- [Careers](https://brandkarlo.vercel.app/careers.html): Open roles and how to join the BrandKarlo team.
+- [Contact Us](https://brandkarlo.vercel.app/contact.html): Address, phone, email, and contact form for BrandKarlo's New Delhi office.
+- [Get a Free Consultation](https://brandkarlo.vercel.app/Get-Free-Consultation.html): Book a free strategy consultation call.
+
+## Services
+
+- [All Services](https://brandkarlo.vercel.app/service.html): Overview of every service BrandKarlo offers.
+- [Search Engine Optimization (SEO)](https://brandkarlo.vercel.app/service.html#seo-detail): Technical audits, keyword-mapped content, and link-building to grow organic traffic.
+- [Website Design & Development](https://brandkarlo.vercel.app/service.html#web-design-detail): Custom-coded and Shopify websites built for speed, responsiveness, and conversions.
+- [Social Media Marketing](https://brandkarlo.vercel.app/service.html#social-media-detail): Content calendars, creatives, and community management.
+- [AI Marketing Automation](https://brandkarlo.vercel.app/service.html#ai-automation-detail): Automated lead follow-up and AI-assisted customer support workflows.
+- [Google Ads (PPC)](https://brandkarlo.vercel.app/service.html#ppc-detail): Paid search campaigns built around business goals, not just clicks.
+- [Branding & Graphic Design](https://brandkarlo.vercel.app/service.html#branding-detail): Logos, packaging, and full brand identity systems.
+
+## Work & Insights
+
+- [Our Projects](https://brandkarlo.vercel.app/project.html): Portfolio of client work across SEO, web design, ads, and branding.
+- [Blog](https://brandkarlo.vercel.app/blog.html): Articles on SEO, social media, PPC, branding, content, and email marketing trends.
+- [FAQ](https://brandkarlo.vercel.app/faq.html): Common questions about BrandKarlo's services, pricing, and process.
+
+## Legal
+
+- [Privacy Policy](https://brandkarlo.vercel.app/privacy-policy.html)
+- [Terms & Conditions](https://brandkarlo.vercel.app/terms-and-conditions.html)
